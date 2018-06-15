@@ -1,0 +1,16 @@
+- name: Create a new instance and attaches to a network and passes metadata to the instance
+  os_server:
+       state: present
+       auth:
+         auth_url: {{auth_url}}
+         username: {{username}}
+         password: {{password}}
+         project_name: {{project_name}}
+       name: {{machine_name}}
+       image: {{image}}
+       key_name: {{key}}
+       timeout: {{timeout}}
+       flavor: {{flavour}}
+       nics:
+         - net-id: {{net-id}}
+         - net-name: {{net-name}}
