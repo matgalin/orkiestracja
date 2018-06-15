@@ -2,9 +2,9 @@
   gather_facts: false
   hosts: all
   tasks:
-    - name: Create a new instance and attaches to a network and passes metadata to the instance
+    - name: destroy
       os_server:
-        state: present
+        state: absent
         auth:
           auth_url: "{{auth_url}}"
           username: "{{username}}"
@@ -13,9 +13,3 @@
           user_domain_name: default
           project_domain_name: default
         name: "{{machine_name}}"
-        image: "{{image}}"
-        key_name: "{{key_name}}"
-        timeout: "{{timeout}}"
-        flavor: "{{flavor}}"
-        network: "{{network}}"
-        public_ip: "{{ip}}"
