@@ -1,17 +1,19 @@
-- name: Create a new instance and attaches to a network and passes metadata to the instance
+- name: Launch a compute instance
   hosts: localhost
-  os_server:
-       state: present
-       auth:
-         auth_url: "{{auth_url}}"
-         username: "{{username}}"
-         password: "{{password}}"
-         project_name: "{{project_name}}"
-         user_domain_name: default
-         region_name: RegionOne
-       name: "{{machine_name}}"
-       image: "{{image}}"
-       key_name: "{{key_name}}"
-       timeout: "{{timeout}}"
-       flavor: "{{flavour}}"
-       network: "{{network}}"
+  tasks:
+    - name: Create a new instance and attaches to a network and passes metadata to the instance
+      os_server:
+        state: present
+        auth:
+          auth_url: "{{auth_url}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          project_name: "{{project_name}}"
+          user_domain_name: default
+          region_name: RegionOne
+        name: "{{machine_name}}"
+        image: "{{image}}"
+        key_name: "{{key_name}}"
+        timeout: "{{timeout}}"
+        flavor: "{{flavour}}"
+        network: "{{network}}"
