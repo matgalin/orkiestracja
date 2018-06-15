@@ -17,5 +17,6 @@
         key_name: "{{key_name}}"
         timeout: "{{timeout}}"
         flavor: "{{flavor}}"
-        network: "{{network}}"
-        public_ip: "{{ip}}"
+        nics: 
+          net-name: "{{net_name}}"
+          port-name: "{{port_name}}"
