@@ -11,7 +11,7 @@
          region_name: RegionOne
        name: "{{machine_name}}"
        image: "{{image}}
-       key_name: "{{key}}"
+       key_name: "{{key_name}}"
        timeout: "{{timeout}}"
        flavor: "{{flavour}}"
        network: "{{network}}"
