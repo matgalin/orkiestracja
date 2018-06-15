@@ -1,12 +1,20 @@
-- name: Launch a compute instance
-  hosts: all
-  tasks:
-    - name: Launch a VM
-      os_server:
-        image: Ubuntu 14.04 LTS x64
-        name: vm1
-        key_name: my_keypair_dd2d
-        availability_zone: nova
-        flavor: 22
-        state: present
-        network: floatingIPv4
+- name: Create a new instance and attaches to a network and passes metadata to the instance
+  host: localhost
+  os_server:
+       state: present
+       auth:
+         auth_url: https://identity.example.com
+         username: admin
+         password: admin
+         project_name: admin
+       name: vm1
+       image: 4f905f38-e52a-43d2-b6ec-754a13ffb529
+       key_name: ansible_key
+       timeout: 200
+       flavor: 4
+       nics:
+         - net-id: 34605f38-e52a-25d2-b6ec-754a13ffb723
+         - net-name: another_network
+       meta:
+         hostname: test1
+         group: uge_master
