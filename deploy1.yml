@@ -12,6 +12,4 @@
        key_name: "{{key}}"
        timeout: "{{timeout}}"
        flavor: "{{flavour}}"
-       nics:
-         - net-id: "{{net_id}}"
-         - net-name: "{{netname}}"
+       network: "{{network}}"
