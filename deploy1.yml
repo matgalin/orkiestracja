@@ -1,16 +1,12 @@
-- name: Create a new instance and attaches to a network and passes metadata to the instance
-  os_server:
-       state: present
-       auth:
-         auth_url: {{auth_url}}
-         username: {{username}}
-         password: {{password}}
-         project_name: {{project_name}}
-       name: {{machine_name}}
-       image: {{image}}
-       key_name: {{key}}
-       timeout: {{timeout}}
-       flavor: {{flavour}}
-       nics:
-         - net-id: {{net_id}}
-         - net-name: {{net_name}}
+- name: Launch a compute instance
+  hosts: all
+  tasks:
+    - name: Launch a VM
+      os_server:
+        image: Ubuntu 14.04 LTS x64
+        name: vm1
+        key_name: my_keypair_dd2d
+        availability_zone: nova
+        flavor: 22
+        state: present
+        network: floatingIPv4
