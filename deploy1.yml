@@ -7,6 +7,8 @@
          username: "{{username}}"
          password: "{{password}}"
          project_name: "{{project_name}}"
+         user_domain_name: default
+         region_name: RegionOne
        name: "{{machine_name}}"
        image: "{{image}}
        key_name: "{{key}}"
