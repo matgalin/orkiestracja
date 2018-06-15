@@ -15,5 +15,5 @@
         image: "{{image}}"
         key_name: "{{key_name}}"
         timeout: "{{timeout}}"
-        flavor: "{{flavour}}"
+        flavor: "{{flavor}}"
         network: "{{network}}"
