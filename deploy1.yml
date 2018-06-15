@@ -3,18 +3,15 @@
   os_server:
        state: present
        auth:
-         auth_url: https://identity.example.com
-         username: admin
-         password: admin
-         project_name: admin
-       name: vm1
-       image: 4f905f38-e52a-43d2-b6ec-754a13ffb529
-       key_name: ansible_key
-       timeout: 200
-       flavor: 4
+         auth_url: "{{auth_url}}"
+         username: "{{username}}"
+         password: "{{password}}"
+         project_name: "{{project_name}}"
+       name: "{{machine_name}}"
+       image: "{{image}}
+       key_name: "{{key}}"
+       timeout: "{{timeout}}"
+       flavor: "{{flavour}}"
        nics:
-         - net-id: 34605f38-e52a-25d2-b6ec-754a13ffb723
-         - net-name: another_network
-       meta:
-         hostname: test1
-         group: uge_master
+         - net-id: "{{net_id}}"
+         - net-name: "{{netname}}"
