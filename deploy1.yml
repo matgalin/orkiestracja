@@ -12,5 +12,5 @@
        timeout: {{timeout}}
        flavor: {{flavour}}
        nics:
-         - net-id: {{net-id}}
-         - net-name: {{net-name}}
+         - net-id: {{net_id}}
+         - net-name: {{net_name}}
