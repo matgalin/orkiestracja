@@ -18,5 +18,5 @@
         timeout: "{{timeout}}"
         flavor: "{{flavor}}"
         nics: 
-          net-name: "{{net_name}}"
-          port-name: "{{port_name}}"
+          - net-name: "{{net_name}}"
+          - port-name: "{{port_name}}"
