@@ -5,7 +5,7 @@
     - name: Stop
       os_server_action:
         action: stop
-        name: "{{machine_name}}"
+        server: "{{machine_name}}"
     - name: wait 60s
       wait_for: timeout=60
     - name: get instance facts
