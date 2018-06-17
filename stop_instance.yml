@@ -39,6 +39,8 @@
       shell: |
         source /home/os/admin-openrc
         nova image-create --poll {{machine_name | quote}} {{ file | quote}}
+      args:
+        executable: /bin/bash
         
     - name: wait 120s
       wait_for: timeout=120
