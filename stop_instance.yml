@@ -1,6 +1,9 @@
 - name: Stop the instance
   gather_facts: false
   hosts: 10.100.100.200
+  vars:
+    time: ansible_date_time['iso8601']
+    file: {{machine_name + '_' + time}}
   tasks:
     - name: Stop
       os_server_action:
@@ -28,5 +31,30 @@
       register: server_fact
     - debug:
         msg: "{{server_fact}}"
+    - name: Check if everything gone ok
+      fail:
+        msg: "Machine havent stop"
+      when: server_fact['ansible_facts']['openstack_servers'][0].['vm_state'] != 'stopped'
+    - name: make backup image
+      command: nova image-create --poll {{ansible_date_time | quote}} {{ file | quote}}
+    - name: wait 120s
+      wait_for: timeout=120
+    - name:
+      os_image_facts:
+        auth:
+          auth_url: "{{auth_url}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          project_name: "{{project_name}}"
+          user_domain_name: default
+          project_domain_name: default
+        image: "{{file}}"
+      register: image_fact
+    - debug:
+        msg: "{{image_fact}}"
+    
+      
+    
+      
     
       
