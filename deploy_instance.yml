@@ -3,6 +3,13 @@
   tasks:
     - name: Create a new instance and attaches to a port
       os_server:
+        auth:
+          auth_url: "{{auth_url}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          project_name: "{{project_name}}"
+          user_domain_name: default
+          project_domain_name: default
         state: present
         name: "{{machine_name}}"
         image: "{{image}}"
