@@ -19,3 +19,4 @@
         flavor: "{{flavor}}"
         nics: 
           - port-name: "{{port_name}}"
+    
