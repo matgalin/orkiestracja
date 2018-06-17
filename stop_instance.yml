@@ -3,7 +3,7 @@
   hosts: 10.100.100.200
   vars:
     time: ansible_date_time['iso8601']
-    file: {{machine_name + '_' + time}}
+    file: "{{machine_name + '_' + time}}"
   tasks:
     - name: Stop
       os_server_action:
