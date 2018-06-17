@@ -23,5 +23,5 @@
     - debug:
         msg: "{{server_facts}}"
     - fail:
-        msg: "Machine with specified name exists'
+        msg: "Machine with specified name exists"
       when: server_facts.changed
