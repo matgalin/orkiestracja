@@ -5,3 +5,7 @@
     - name: Add host
       add_host:
         hostname: lelel
+    - name: See if it is there
+      debug: var=group_names
+
+    - debug: var=hostvars
