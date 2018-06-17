@@ -6,4 +6,4 @@
     - debug: 
         msg: "{{variable1}}"
     - set_fact:
-        variable1: 'ochujjednaknie'
+        variable2: 'ochujjednaknie'
