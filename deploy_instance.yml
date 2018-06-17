@@ -1,0 +1,13 @@
+- name: Launch compute instance
+  hosts: 10.100.100.200
+  tasks:
+    - name: Create a new instance and attaches to a port
+      os_server:
+        state: present
+        name: "{{machine_name}}"
+        image: "{{image}}"
+        key_name: debian_key
+        timeout: 200
+        flavor: "{{flavor}}"
+        nics: 
+          - port-name: "{{port_name}}"
