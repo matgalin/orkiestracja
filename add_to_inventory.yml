@@ -1,6 +1,7 @@
 - name: Add host to inventory
   hosts: localhost
+  gather_facts: false
   tasks:
-    - name: Add host
+    - hostname: '10.100.100.15'
       add_host:
         name: lelel
