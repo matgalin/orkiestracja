@@ -5,3 +5,5 @@
   tasks:
     - debug: 
         msg: "{{variable1}}"
+    - set_fact:
+        variable1: 'ochujjednaknie'
