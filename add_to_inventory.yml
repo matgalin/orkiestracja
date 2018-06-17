@@ -2,6 +2,6 @@
   hosts: localhost
   gather_facts: false
   tasks:
-    - hostname: '10.100.100.15'
+    - name: Add host
       add_host:
-        name: lelel
+        hostname: lelel
