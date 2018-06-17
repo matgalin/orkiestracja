@@ -22,6 +22,7 @@
       register: server_facts 
     - debug:
         msg: "{{server_facts}}"
-    - fail:
+    - name: Check if everything gone ok
+      fail:
         msg: "Machine with specified name exists"
       when: not server_facts.changed 
