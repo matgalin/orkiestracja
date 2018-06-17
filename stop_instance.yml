@@ -36,7 +36,7 @@
         msg: "Machine havent stop"
       when: server_fact['ansible_facts']['openstack_servers'][0]['vm_state'] != 'stopped'
     - name: make backup image
-      command: nova image-create --poll {{machine_name | quote}} {{ file | quote}}
+      command: source admin_rc && nova image-create --poll {{machine_name | quote}} {{ file | quote}}
     - name: wait 120s
       wait_for: timeout=120
     - name:
