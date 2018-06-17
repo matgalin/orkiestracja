@@ -1,0 +1,5 @@
+- name: Add host to inventory
+  tasks:
+    - name: Add host
+      add_host:
+        name: lelel
