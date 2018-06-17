@@ -1,0 +1,18 @@
+- name: Stop the instance
+  gather_facts: false
+  hosts: 10.100.100.200
+  tasks:
+    - name: Stop
+      os_server:
+        action: stop
+        name: "{{machine_name}}"
+    - name: wait 60s
+      wait_for: timeout=60
+    - name: get instance facts
+      os_server_facts:
+        server: "{{machine_name}}"
+      register: server_fact
+    - debug:
+        msg: "{{server_fact}}"
+    
+      
