@@ -34,7 +34,7 @@
     - name: Check if everything gone ok
       fail:
         msg: "Machine havent stop"
-      when: server_fact['ansible_facts']['openstack_servers'][0].['vm_state'] != 'stopped'
+      when: server_fact['ansible_facts']['openstack_servers'][0]['vm_state'] != 'stopped'
     - name: make backup image
       command: nova image-create --poll {{ansible_date_time | quote}} {{ file | quote}}
     - name: wait 120s
