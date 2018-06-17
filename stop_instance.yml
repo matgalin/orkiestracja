@@ -4,12 +4,26 @@
   tasks:
     - name: Stop
       os_server_action:
+        auth:
+          auth_url: "{{auth_url}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          project_name: "{{project_name}}"
+          user_domain_name: default
+          project_domain_name: default
         action: stop
         server: "{{machine_name}}"
     - name: wait 60s
       wait_for: timeout=60
     - name: get instance facts
       os_server_facts:
+        auth:
+          auth_url: "{{auth_url}}"
+          username: "{{username}}"
+          password: "{{password}}"
+          project_name: "{{project_name}}"
+          user_domain_name: default
+          project_domain_name: default
         server: "{{machine_name}}"
       register: server_fact
     - debug:

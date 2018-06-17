@@ -28,7 +28,7 @@
           project_domain_name: default
           nics: 
            - port-name: "{{port_name}}"
-          register: server_fact_ip
+      register: server_fact_ip
       when: server_fact_name is not defined and port_name is defined
     - debug:
         msg: "No credintials attached"
