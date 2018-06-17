@@ -24,4 +24,4 @@
         msg: "{{server_facts}}"
     - fail:
         msg: "Machine with specified name exists"
-      when: server_facts.changed
+      when: server_facts.changed  is false
