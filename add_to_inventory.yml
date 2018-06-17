@@ -1,4 +1,5 @@
 - name: Add host to inventory
+  hosts: localhost
   tasks:
     - name: Add host
       add_host:
