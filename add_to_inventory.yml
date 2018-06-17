@@ -1,11 +1,19 @@
-- name: Add host to inventory
-  hosts: localhost
-  gather_facts: false
+- hosts: localhost
+  connection: local
+  gather_facts: False
   tasks:
-    - name: Add host
-      add_host:
-        hostname: lelel
+    - name: Add a group
+      add_host: hostname=foo groups=testgroup
+
     - name: See if it is there
       debug: var=group_names
 
     - debug: var=hostvars
+
+- hosts: testgroup
+  connection: local
+  gather_facts: false
+  tasks:
+    - debug: var=group_names
+    - debug: msg="{{ inventory_hostname }}"
+    - debug: var=hostvars[inventory_hostname]
