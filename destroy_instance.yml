@@ -13,7 +13,7 @@
           user_domain_name: default
           project_domain_name: default
         name: "{{machine_name}}"
-      when: {{machine_name}} is defined
+      when: "{{machine_name}}" is defined
     - name: Destroy instance by ip address
       os_server:
         state: absent
@@ -29,5 +29,5 @@
       when: {{machine_name}} is not defined and {{port_name}} is defined
     - debug:
         msg: "No credintials attached"
-      when: {{machine_name}} is not defined and {{port_name}} is not defined
+      when: "{{machine_name}}" is not defined and {{port_name}} is not defined
         
