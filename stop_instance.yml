@@ -3,7 +3,7 @@
   hosts: 10.100.100.200
   tasks:
     - name: Stop
-      os_server:
+      os_server_action:
         action: stop
         name: "{{machine_name}}"
     - name: wait 60s
