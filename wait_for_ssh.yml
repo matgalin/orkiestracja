@@ -2,4 +2,8 @@
   hosts: localhost
   gather_facts: False
   tasks:
-    - local_action: wait_for port=22 host="{{host}}" search_regex=OpenSSH delay=10
+    - wait_for:
+        host: "{{port_name}}"
+        port: 22
+        search_regex: OpenSSH
+        delay: 10
