@@ -9,11 +9,3 @@
       debug: var=group_names
 
     - debug: var=hostvars
-
-- hosts: testgroup
-  connection: local
-  gather_facts: false
-  tasks:
-    - debug: var=group_names
-    - debug: msg="{{ inventory_hostname }}"
-    - debug: var=hostvars[inventory_hostname]
