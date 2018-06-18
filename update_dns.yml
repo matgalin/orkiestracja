@@ -1,10 +1,15 @@
 - hosts: "{{port_name}}"
   gather_facts: False
+  become: true
   tasks:
-    - name: Add a group
+    - name: Update resolv.conf
       template:
         src: resolv.conf.j2
         dest: /etc/resolv.conf
-      become: true
+    - name: Update and upgrade
+      apt:
+        upgrade: yes
+        update_cache: yes
+    
       
      
