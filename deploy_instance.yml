@@ -37,4 +37,5 @@
             project_name: "{{project_name}}"
             user_domain_name: default
             project_domain_name: default
+          name: "{{machine_name}}"
           state: absent
